@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="202411020822" author="helppouser">
+        <createTable tableName="books">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="book_id_pk" />
+            </column>
+            <column name="name" type="varchar(250)" />
+            <column name="writer" type="varchar(250)" />
+        </createTable>
+        <rollback>
+            <dropTable tableName="book"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="202411031050" author="helppouser">
+        <createTable tableName="authors">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="author_id_pk"/>
+            </column>
+            <column name="fName" type="varchar(100)"/>
+            <column name="lName" type="varchar(100)"/>
+            <column name="age" type="int"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="author"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="202411031102" author="helppouser">
+        <insert tableName="authors">
+            <column name="fName" value="J K"/>
+            <column name="lName" value="Rowling"/>
+            <column name="age" value="59"/>
+        </insert>
+    </changeSet>
+    <changeSet id="202411031105" author="helppouser">
+        <tagDatabase tag="202411031105:helppouser:authors"/>
+    </changeSet>
+    <changeSet id="202411031450" author="helppouser">
+        <createTable tableName="client">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="client_id_pk"/>
+            </column>
+            <column name="name" type="varchar(250)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="202411031453" author="helppouser">
+        <tagDatabase tag="202411031453:helppouser:client"/>
+    </changeSet>
+
+</databaseChangeLog>
