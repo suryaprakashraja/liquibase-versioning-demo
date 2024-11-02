@@ -67,5 +67,10 @@ Create your first JPA entity
 
 [Related guide section...](https://quarkus.io/guides/hibernate-orm)
 
+1. https://stackoverflow.com/questions/10620131/running-liquibase-within-java-code
+2. https://github.com/eriklumme/liquibase-from-java/tree/master
+3. https://medium.com/@knoldus/how-to-integrate-liquibase-into-your-application-59ecee9d209e
+4. https://www.baeldung.com/liquibase-refactor-schema-of-java-app
+5. https://www.baeldung.com/liquibase-rollback
 
 [Related Hibernate with Panache in Kotlin section...](https://quarkus.io/guides/hibernate-orm-panache-kotlin)
